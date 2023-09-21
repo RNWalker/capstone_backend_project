@@ -10,10 +10,15 @@ public class Truck {
     private List<Order> orders;
 
     public Truck(int maxCapacity) {
-        this.id = id;
         this.maxCapacity = maxCapacity;
         this.orders = new ArrayList<>();
     }
+
+    // DEFAULT CONSTRUCTOR
+    public Truck() {
+    }
+
+    // GETTERS AND SETTERS
 
     public Long getId() {
         return id;
@@ -31,11 +36,11 @@ public class Truck {
         this.maxCapacity = maxCapacity;
     }
 
-    public List<Order> getOrder() {
+    public List<Order> getOrders() {
         return orders;
     }
 
-    public void setOrder(List<Order> order) {
+    public void setOrders(List<Order> orders) {
         this.orders = orders;
     }
 

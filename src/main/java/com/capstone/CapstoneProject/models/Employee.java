@@ -1,6 +1,9 @@
 package com.capstone.CapstoneProject.models;
 
 
+import com.capstone.CapstoneProject.models.enums.Position;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Employee {
@@ -17,11 +20,11 @@ public class Employee {
 
     private Position position;
 
-    public Employee(String name, String username, String password, List<Order> orders, Position position) {
+    public Employee(String name, String username, String password, Position position) {
         this.name = name;
         this.username = username;
         this.password = password;
-        this.orders = orders;
+        this.orders = new ArrayList<>();
         this.position = position;
     }
 

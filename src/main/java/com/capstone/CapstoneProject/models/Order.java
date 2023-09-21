@@ -33,6 +33,12 @@ public class Order {
         this.status = Status.UNFULFILLED;
     }
 
+    // DEFAULT CONSTRUCTOR
+    public Order() {
+    }
+
+    // GETTERS AND SETTERS
+
     public Long getId() {
         return id;
     }

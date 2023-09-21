@@ -1,5 +1,7 @@
 package com.capstone.CapstoneProject.models;
 
+import com.capstone.CapstoneProject.models.enums.Size;
+
 public class Product {
 
     private Long id;
@@ -13,6 +15,8 @@ public class Product {
     private String category;
 
     private Size size;
+
+//    private String image; Needed to check the type of image
 
     private String warehouseLocation;
 
