@@ -1,5 +1,6 @@
 package com.capstone.CapstoneProject.models;
 
+import com.capstone.CapstoneProject.models.enums.Category;
 import com.capstone.CapstoneProject.models.enums.Size;
 
 public class Product {
@@ -12,13 +13,13 @@ public class Product {
 
     private String notes;
 
-    private String category;
+    private Category category;
 
     private Size size;
 
-//    private String image; Needed to check the type of image
+   private String imageURL;
 
-    private String warehouseLocation;
+    private String productLocation;
 
     private boolean fragile;
 
@@ -26,16 +27,17 @@ public class Product {
 
     private boolean flammable;
 
-    public Product(String name, int stockLevel, String notes, String category, Size size, String warehouseLocation, boolean fragile, boolean heavy, boolean flammable) {
+    public Product(String name, int stockLevel, String notes, Category category, Size size, String imageURL, String productLocation, boolean fragile, boolean heavy, boolean flammable) {
         this.name = name;
         this.stockLevel = stockLevel;
         this.notes = notes;
         this.category = category;
         this.size = size;
-        this.warehouseLocation = warehouseLocation;
+        this.productLocation = productLocation;
         this.fragile = fragile;
         this.heavy = heavy;
         this.flammable = flammable;
+        this.imageURL = imageURL;
     }
 
     // DEFAULT CONSTRUCTOR
@@ -77,11 +79,11 @@ public class Product {
         this.notes = notes;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
@@ -93,12 +95,12 @@ public class Product {
         this.size = size;
     }
 
-    public String getWarehouseLocation() {
-        return warehouseLocation;
+    public String getProductLocation() {
+        return productLocation;
     }
 
-    public void setWarehouseLocation(String warehouseLocation) {
-        this.warehouseLocation = warehouseLocation;
+    public void setProductLocation(String warehouseLocation) {
+        this.productLocation = productLocation;
     }
 
     public boolean isFragile() {
@@ -123,5 +125,13 @@ public class Product {
 
     public void setFlammable(boolean flammable) {
         this.flammable = flammable;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

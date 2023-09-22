@@ -1,7 +1,9 @@
 package com.capstone.CapstoneProject.models;
 
 import com.capstone.CapstoneProject.models.enums.Status;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Order {
@@ -13,7 +15,7 @@ public class Order {
     private boolean orderPriority;
 
 
-    private String date;
+    private LocalDate date;
 
     private int productSumSize;
 
@@ -23,7 +25,7 @@ public class Order {
 
     private Status status;
 
-    public Order(List<Product> products, boolean orderPriority, String date) {
+    public Order(List<Product> products, boolean orderPriority, LocalDate date) {
         this.products = products;
         this.orderPriority = orderPriority;
         this.date = date;
@@ -63,11 +65,11 @@ public class Order {
         this.orderPriority = orderPriority;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
