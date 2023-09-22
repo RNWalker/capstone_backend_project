@@ -2,30 +2,56 @@ package com.capstone.CapstoneProject.models;
 
 import com.capstone.CapstoneProject.models.enums.Category;
 import com.capstone.CapstoneProject.models.enums.Size;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 
+import java.util.List;
+
+@Entity
+@Table(name="products")
 public class Product {
 
+    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String name;
 
+    @Column(name="stock_level")
     private int stockLevel;
 
+    @Column
     private String notes;
 
+//    @Column
+    @Enumerated(EnumType.STRING)
     private Category category;
 
+//    @Column
+    @Enumerated(EnumType.STRING)
     private Size size;
 
-   private String imageURL;
+    @Column(name="image_url")
+    private String imageURL;
 
+    @Column(name="product_location")
     private String productLocation;
 
+    @Column
     private boolean fragile;
 
+    @Column
     private boolean heavy;
 
+    @Column
     private boolean flammable;
+
+    @Column
+    @ManyToMany(mappedBy = "products")
+    @JsonIgnoreProperties({"products"})
+    private List<Order> orders;
 
     public Product(String name, int stockLevel, String notes, Category category, Size size, String imageURL, String productLocation, boolean fragile, boolean heavy, boolean flammable) {
         this.name = name;
@@ -133,5 +159,13 @@ public class Product {
 
     public void setImageURL(String imageURL) {
         this.imageURL = imageURL;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }

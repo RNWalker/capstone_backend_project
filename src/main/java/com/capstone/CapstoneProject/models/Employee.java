@@ -2,22 +2,36 @@ package com.capstone.CapstoneProject.models;
 
 
 import com.capstone.CapstoneProject.models.enums.Position;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="employees")
 public class Employee {
 
+    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String name;
 
+    @Column
     private String username;
 
+    @Column
     private String password;
 
+    @OneToMany(mappedBy = "employee")
+    @JsonIgnoreProperties({"employees"})
     private List<Order> orders;
 
+//    @Column
+    @Enumerated(EnumType.STRING)
     private Position position;
 
     public Employee(String name, String username, String password, Position position) {

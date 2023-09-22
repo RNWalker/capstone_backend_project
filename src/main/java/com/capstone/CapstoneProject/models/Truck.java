@@ -1,12 +1,23 @@
 package com.capstone.CapstoneProject.models;
 
-        import java.util.ArrayList;
-        import java.util.List;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+@Entity
+@Table(name="trucks")
 public class Truck {
 
+    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="max_capacity")
     private int maxCapacity;
+
+    @OneToMany(mappedBy = "truck")
+    @JsonIgnoreProperties({"trucks"})
     private List<Order> orders;
 
     public Truck(int maxCapacity) {
