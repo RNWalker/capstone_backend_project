@@ -28,8 +28,9 @@ public class OrderController {
         return new ResponseEntity<>(orderService.getOrderById(id).get(), HttpStatus.OK);
     }
 
+//    http://localhost:8080/orders/updateOrderStatus?orderId=1&employeeId=1&truckId=3&status=ONGOING
     @PatchMapping(value = "/updateOrderStatus")
-    public void updateOrderStatus(@RequestParam Long orderId, Long employeeId, Long truckId, Status status){
+    public void updateOrderStatus(@RequestParam Status status, @RequestParam Long orderId, @RequestParam Long employeeId, @RequestParam Long truckId){
         orderService.updateOrderStatus(status, orderId, employeeId, truckId);
     }
 
