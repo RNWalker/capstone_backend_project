@@ -53,7 +53,7 @@ public class DataLoader implements ApplicationRunner {
         Product product1 = new Product("Apple Iphone 15",15,
                 "black Iphone with 128GB",
                 Category.ELECTRONICS, Size.SMALL,
-                "https://i.imgur.com/r7P8LgL.jpg", "A14",false, false, true);
+                "https://i.imgur.com/r7P8LgLs.jpg", "A14",false, false, true);
 
         Product product2 = new Product("baseball cap",4,
                 "adults navy cap", Category.ACCESSORIES ,
